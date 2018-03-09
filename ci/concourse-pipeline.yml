@@ -19,8 +19,9 @@ jobs:
 - name: build
   
   plan:
-  - get: bitcoin-src
   - get: bitcoin-pipeline
+    trigger: true
+  - get: bitcoin-src
   - task: build
     config:
       inputs:
@@ -30,4 +31,4 @@ jobs:
       image_resource:
         type: docker-image-resource
       run:
-        path: ./bitcoin-pipeline/ci/concourse-make-bitcoin.sh
+        path: ls
