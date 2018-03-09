@@ -18,7 +18,7 @@ jobs:
     config:
       inputs:
       - name: bitcoin-src
-      - name: pipeline-src
+      - name: bitcoin-pipeline
       platform: linux
       image_resource:
         type: docker-image
