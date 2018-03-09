@@ -3,7 +3,7 @@ resource_types:
   type: docker-image
   privileged: true
   source: 
-    repository: dbwest/bitcoin-buildbox
+    repository: ruby
 
 resources:
   - name: bitcoin-src
