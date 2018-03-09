@@ -31,6 +31,6 @@ jobs:
       image_resource:
         type: docker-image
         source: 
-          repository: ruby
+          repository: dbwest/bitcoin-buildbox
       run:
         path: ls
