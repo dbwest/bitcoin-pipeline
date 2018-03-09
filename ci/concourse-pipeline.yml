@@ -33,4 +33,4 @@ jobs:
         source: 
           repository: dbwest/bitcoin-buildbox
       run:
-        path: ls
+        path: ./bitcoin-pipeline/ci/concourse-make-bitcoin.sh
