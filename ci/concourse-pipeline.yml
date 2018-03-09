@@ -1,0 +1,28 @@
+resources:
+  - name: bitcoin-src
+    type: git
+    source:
+      uri: https://github.com/bitcoin/bitcoin.git
+      branch: master
+  - name: bitcoin-pipeline
+    type: git
+    source:
+      uri: https://github.com/dbwest/bitcoin-pipeline.git
+jobs:
+- name: build
+  
+  plan:
+  - get: bitcoin-src
+  - get: bitcoin-pipeline
+  - task: build
+    config:
+      inputs:
+      - name: bitcoin-src
+      - name: pipeline-src
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: 
+          repository: poliver/bitcoin-dev-box
+      run:
+        path: ./bitcoin-pipeline/ci/concourse-make-bitcoin.sh
